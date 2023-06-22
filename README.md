@@ -1,6 +1,6 @@
 # KAPSARC
 
-This repository includes the Python code that extracts data, transforms, and loads as follows:
+This repository includes the Python code that does the following tasks:
 
 1) Scrape the data from http://www.jodidb.org/TableViewer/tableView.aspx?ReportId=93906  
 
@@ -8,7 +8,7 @@ This repository includes the Python code that extracts data, transforms, and loa
   &nbsp;&nbsp;Joint Organisations Data Initiative – Primary (last 15 months) Other: Unit . Thousand Barrels per day (kb/d) Product\
   &nbsp;&nbsp;www.jodidb.org\
 
- with The Balance set to Exports.
+ &nbsp;&nbsp;with The Balance set to Exports.
 
 2) Insert the extracted data into a database preferably SQLite or any other database you choose. The data format should be as follows (with 
   country / month-year / value being columns):\
