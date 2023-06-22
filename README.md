@@ -1,4 +1,4 @@
-# KAPSARC
+# Overview
 
 This repository includes the Python code that does the following tasks:
 
@@ -16,3 +16,7 @@ This repository includes the Python code that does the following tasks:
     country | month-year | value\
     Algeria   Sep2019      1024\
     Algeria   Oct2019      1023
+
+## Setup
+1. install Python IDE on your device
+2. Also, make sure to have the following libraries installed — pandas, lxml, requests, beautifulsoup4, wheel.
