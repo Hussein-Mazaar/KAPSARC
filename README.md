@@ -10,8 +10,7 @@ This repository includes the Python code that does the following tasks:
 
  &nbsp;&nbsp;with The Balance set to Exports.
 
- The request to the above URL scrapes empty data so we use another URL that fills the website with data\
- http://www.jodidb.org/TableViewer/getData.aspx?row=1&col=1&rowCount=100&colCount=100&ReportId=93906
+
 
 2) Insert the extracted data into a database preferably SQLite or any other database you choose. The data format should be as follows (with 
   country / month-year / value being columns):\
