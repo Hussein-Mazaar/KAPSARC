@@ -12,7 +12,6 @@ This repository includes the Python code that extracts data, transforms, and loa
 
 2) Insert the extracted data into a database preferably SQLite or any other database you choose. The data format should be as follows (with 
   country / month-year / value being columns):
-
-    country | month-year | value
-    Algeria   Sep2019      1024
+    country | month-year | value\n
+    Algeria   Sep2019      1024\n
     Algeria   Oct2019      1023
