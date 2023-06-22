@@ -31,11 +31,12 @@ def extract(url):
         # looping on all times for the country
         for cell in cells:               
             row_list.append(cell["v"])   #appending the time data to the list
-        #assign the row list of each country to the dataframe
+        #assigning the row list of each country to the dataframe
         data.loc[len(data)] = row_list 
     return data
 
 def transform(data):
+    # tranform the dataframe from country Feb2022... into country |month-year|value 
     df_transformed = data.melt(id_vars=['Country'], var_name='month_year', value_name='value')
     return df_transformed
 
