@@ -5,7 +5,7 @@ import sqlite3
 def extract(url):
     # URL of the website to scrape
     response = requests.get(url)
-    # Parse the HTML content using BeautifulSoup
+    # Parse the XML content using BeautifulSoup
     soup = BeautifulSoup(response.text, "xml")
     
     # Extracting the header of xml to dataframe columns
@@ -17,7 +17,8 @@ def extract(url):
     df_columns=[]
     df_columns.append(Country)
     df_columns.extend(Time) 
-    data=pd.DataFrame(columns=df_columns) #Declaring the dataframe
+    #Declaring the dataframe 
+    data=pd.DataFrame(columns=df_columns) 
     
     # Extracting the data rows from xml
     rows = soup.find_all("Row")
@@ -27,10 +28,11 @@ def extract(url):
         cells = row.find("Cells").find_all("C")
         row_list =[]
         row_list.append(country)
-        for cell in cells:               # looping on all times for the country
+        # looping on all times for the country
+        for cell in cells:               
             row_list.append(cell["v"])   #appending the time data to the list
-        
-        data.loc[len(data)] = row_list #assign the list of country to the dataframe
+        #assign the row list of each country to the dataframe
+        data.loc[len(data)] = row_list 
     return data
 
 def transform(data):
@@ -60,9 +62,13 @@ def load(data):
     return 'data inserted successfully'
 
 if __name__ == '__main__':
-
+    # the url is the request the fill the targeted page, scraping the url 
+    # that sent in email, always return empty data
     url = "http://www.jodidb.org/TableViewer/getData.aspx?row=1&col=1&rowCount=100&colCount=100&ReportId=93906"
-    df=extract(url)
-    df_t=transform(df)
+    # extracting and scraping the data from URL
+    df=extract(url) 
+    # transforming the data to country | month-year | value
+    df_t=transform(df) 
+    # loading the data into SQLite 
     load(df_t)
 
